@@ -23,7 +23,7 @@
   // 判定関連（拍末からのオフセットだけ手前にターゲット化）
   const HIT_TARGET_FROM_END_MS = 60; // 拍末からの手前オフセット
   const JUDGE_PERFECT_MS = 90; // PERFECT 判定幅（±）
-  const JUDGE_OK_MS = 180; // OK 判定幅（±）
+  const JUDGE_OK_MS = 200; // OK 判定幅（±）
 
   /**
    * UI 参照
