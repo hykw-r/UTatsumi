@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>うーたつみー！</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1 class="title">うーたつみー！</h1>
+        <p class="subtitle">↑=うー / ←=たつ / →=みー をリズムよく！</p>
+      </header>
+
+      <section class="controls">
+        <button id="startBtn" class="btn primary" aria-label="スタート">スタート</button>
+      </section>
+
+      <section class="stats">
+        <div class="stat"><span class="label">周回</span><span id="roundCount" class="value">0</span></div>
+        <div class="stat"><span class="label">ミス</span><span id="missCount" class="value">0</span><span class="of"> / 5</span></div>
+        <div class="stat"><span class="label">BPM</span><span id="bpmDisplay" class="value">90</span></div>
+      </section>
+
+      <section class="sequence">
+        <div id="sequenceTrack" class="sequence-track" aria-live="polite"></div>
+      </section>
+
+      <section class="progress">
+        <div class="progress-bar" role="progressbar" aria-label="ビート進行">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+      </section>
+
+      <section class="countin" aria-live="polite">
+        <div id="countInHud" class="countin-hud hidden" aria-label="カウントイン">
+          <span class="count-number" id="countInNumber">4</span>
+        </div>
+      </section>
+
+      <section class="input-area">
+        <button class="input-btn u" data-token="0" aria-label="↑ うー">
+          <span class="icon"><img src="./assets/images/u.png" alt="うー" decoding="async" loading="eager"></span>
+          <span class="key">↑キー</span>
+          <span class="label">うー</span>
+        </button>
+        <button class="input-btn ta" data-token="1" aria-label="← たつ">
+          <span class="icon"><img src="./assets/images/tatsu.png" alt="たつ" decoding="async" loading="eager"></span>
+          <span class="key">←キー</span>
+          <span class="label">たつ</span>
+        </button>
+        <button class="input-btn mi" data-token="2" aria-label="→ みー">
+          <span class="icon"><img src="./assets/images/mi.png" alt="みー" decoding="async" loading="eager"></span>
+          <span class="key">→キー</span>
+          <span class="label">みー</span>
+        </button>
+      </section>
+    </main>
+
+    <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true">
+      <div class="dialog">
+        <h2>ゲームオーバー</h2>
+        <p>周回数: <strong id="finalRound">0</strong></p>
+        <div class="dialog-actions">
+          <button id="overlayRestartBtn" class="btn primary">もう一度</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js" defer></script>
+  </body>
+  </html>
+
+
+
